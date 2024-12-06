@@ -17,7 +17,8 @@ import pandas as pd
 import plotly.express as px  # type:  ignore
 import streamlit as st
 
-locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")  # Set locale to Spanish
+# Es locale usupported by streamlit remote server
+# locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")  # Set locale to Spanish
 
 
 def load_dataset(path: str) -> pd.DataFrame:
