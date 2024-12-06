@@ -2,7 +2,7 @@
 name = "finanzas"
 version = "0.1.0"
 description = "finanzas personales"
-authors = ["https://github.com/manumartin/"]
+authors = ["Manuel Martin <xxx@xxx.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
