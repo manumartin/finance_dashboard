@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "finanzas"
+version = "0.1.0"
+description = "finanzas personales"
+authors = ["https://github.com/manumartin/"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.3"
+matplotlib = "^3.9.3"
+plotly = "^5.24.1"
+numpy = "^2.1.3"
+ipykernel = "^6.29.5"
+streamlit = "^1.40.2"
+seaborn = "^0.13.2"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.13.0"
+pandas-stubs = "^2.2.3.241126"
+ruff = "^0.8.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]

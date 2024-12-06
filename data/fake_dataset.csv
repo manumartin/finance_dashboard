@@ -1,0 +1,561 @@
+Fecha,Concepto,Category,Subcategory,Importe,Saldo
+2024-06-09 21:00:29.549909,Nómina,Ingresos,Nómina,2890.73,7890.73
+2024-06-09 21:00:29.549909,Gimnasio,Ocio,Deportes,-202.98,7687.75
+2024-06-09 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-104.2,7583.55
+2024-06-09 21:00:29.549909,Bar,Alimentación,Restaurantes,-369.03,7214.52
+2024-06-09 21:00:29.549909,Regalo,Ingresos,Otros,1018.18,8232.7
+2024-06-10 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-49.93,8182.77
+2024-06-10 21:00:29.549909,Fianza,Vivienda,Alquiler,-823.71,7359.06
+2024-06-10 21:00:29.549909,Taxi,Transporte,Público,-142.72,7216.34
+2024-06-11 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-1155.16,6061.18
+2024-06-11 21:00:29.549909,Luz,Vivienda,Suministros,-490.44,5570.74
+2024-06-11 21:00:29.549909,iCloud,Suscripciones,Software,-36.18,5534.56
+2024-06-11 21:00:29.549909,HBO,Suscripciones,Streaming,-42.84,5491.72
+2024-06-11 21:00:29.549909,Vuelos,Ocio,Viajes,-171.03,5320.69
+2024-06-12 21:00:29.549909,Bus,Transporte,Público,-184.15,3859.62
+2024-06-12 21:00:29.549909,HBO,Suscripciones,Streaming,-29.42,4886.57
+2024-06-12 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-842.8,4043.77
+2024-06-12 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-294.14,5026.55
+2024-06-12 21:00:29.549909,Parking,Transporte,Privado,-110.56,4915.99
+2024-06-13 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-359.43,3500.19
+2024-06-13 21:00:29.549909,HBO,Suscripciones,Streaming,-48.25,3451.94
+2024-06-13 21:00:29.549909,Mercadona,Alimentación,Supermercado,-194.37,3257.57
+2024-06-14 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-76.84,3180.73
+2024-06-14 21:00:29.549909,Teatro,Ocio,Entretenimiento,-268.75,2911.98
+2024-06-15 21:00:29.549909,Gasolina,Transporte,Privado,-52.12,2669.81
+2024-06-15 21:00:29.549909,Bar,Alimentación,Restaurantes,-190.05,2721.93
+2024-06-15 21:00:29.549909,Material deportivo,Ocio,Deportes,-182.61,2487.2
+2024-06-16 21:00:29.549909,Bus,Transporte,Público,-114.45,2372.75
+2024-06-16 21:00:29.549909,Netflix,Suscripciones,Streaming,-40.29,2332.46
+2024-06-17 21:00:29.549909,Gasolina,Transporte,Privado,-166.91,2056.26
+2024-06-17 21:00:29.549909,Actividades,Ocio,Viajes,-88.1,1968.16
+2024-06-17 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-68.54,2263.92
+2024-06-17 21:00:29.549909,Microsoft,Suscripciones,Software,-40.75,2223.17
+2024-06-17 21:00:29.549909,Carrefour,Alimentación,Supermercado,-395.47,1572.69
+2024-06-18 21:00:29.549909,Restaurante,Alimentación,Restaurantes,-354.67,1218.02
+2024-06-19 21:00:29.549909,Netflix,Suscripciones,Streaming,-12.62,1205.4
+2024-06-19 21:00:29.549909,Material deportivo,Ocio,Deportes,-37.15,1168.25
+2024-06-19 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-123.4,1044.85
+2024-06-19 21:00:29.549909,Gas,Vivienda,Suministros,-1156.92,-112.07
+2024-06-19 21:00:29.549909,Material deportivo,Ocio,Deportes,-217.77,-329.84
+2024-06-20 21:00:29.549909,Carrefour,Alimentación,Supermercado,-198.68,-528.52
+2024-06-20 21:00:29.549909,Metro,Transporte,Público,-126.08,-654.6
+2024-06-20 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-89.33,-743.93
+2024-06-20 21:00:29.549909,Microsoft,Suscripciones,Software,-8.02,-751.95
+2024-06-21 21:00:29.549909,HBO,Suscripciones,Streaming,-47.88,-799.83
+2024-06-21 21:00:29.549909,Luz,Vivienda,Suministros,-832.22,-1632.05
+2024-06-21 21:00:29.549909,Devolución,Ingresos,Otros,1557.09,-74.96
+2024-06-21 21:00:29.549909,iCloud,Suscripciones,Software,-14.13,-89.09
+2024-06-21 21:00:29.549909,Reembolso,Ingresos,Otros,1673.18,1584.09
+2024-06-22 21:00:29.549909,Nómina,Ingresos,Nómina,1065.16,2136.03
+2024-06-22 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-470.36,1070.87
+2024-06-22 21:00:29.549909,Cine,Ocio,Entretenimiento,-19.43,1564.66
+2024-06-22 21:00:29.549909,Adobe,Suscripciones,Software,-23.43,1541.23
+2024-06-23 21:00:29.549909,Hotel,Ocio,Viajes,-239.77,1896.26
+2024-06-24 21:00:29.549909,iCloud,Suscripciones,Software,-34.62,1861.64
+2024-06-24 21:00:29.549909,Internet,Vivienda,Suministros,-776.34,1085.3
+2024-06-24 21:00:29.549909,Paga extra,Ingresos,Nómina,2851.46,3936.76
+2024-06-24 21:00:29.549909,Bar,Alimentación,Restaurantes,-134.3,3802.46
+2024-06-25 21:00:29.549909,Regalo,Ingresos,Otros,2005.11,5807.57
+2024-06-26 21:00:29.549909,Bus,Transporte,Público,-25.15,5782.42
+2024-06-26 21:00:29.549909,Internet,Vivienda,Suministros,-1062.4,4720.02
+2024-06-26 21:00:29.549909,Cine,Ocio,Entretenimiento,-257.82,4462.2
+2024-06-27 21:00:29.549909,Gasolina,Transporte,Privado,-100.15,4362.05
+2024-06-27 21:00:29.549909,Devolución,Ingresos,Otros,1052.78,5414.83
+2024-06-28 21:00:29.549909,Netflix,Suscripciones,Streaming,-41.98,5372.85
+2024-06-28 21:00:29.549909,Nómina,Ingresos,Nómina,1952.93,7325.78
+2024-06-29 21:00:29.549909,Bar,Alimentación,Restaurantes,-150.47,6714.13
+2024-06-29 21:00:29.549909,Carrefour,Alimentación,Supermercado,-260.55,6864.6
+2024-06-29 21:00:29.549909,Material deportivo,Ocio,Deportes,-248.51,6465.62
+2024-06-29 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-104.59,7221.19
+2024-06-29 21:00:29.549909,Vuelos,Ocio,Viajes,-96.04,7125.15
+2024-06-30 21:00:29.549909,HBO,Suscripciones,Streaming,-33.23,6432.39
+2024-06-30 21:00:29.549909,Devolución,Ingresos,Otros,1171.8,7604.19
+2024-06-30 21:00:29.549909,Vuelos,Ocio,Viajes,-296.67,7307.52
+2024-07-01 21:00:29.549909,Cine,Ocio,Entretenimiento,-275.43,7032.09
+2024-07-01 21:00:29.549909,Paga extra,Ingresos,Nómina,1509.3,8541.39
+2024-07-01 21:00:29.549909,Gas,Vivienda,Suministros,-461.48,8079.91
+2024-07-02 21:00:29.549909,Gasolina,Transporte,Privado,-147.25,7932.66
+2024-07-02 21:00:29.549909,Netflix,Suscripciones,Streaming,-28.43,7904.23
+2024-07-02 21:00:29.549909,Netflix,Suscripciones,Streaming,-39.97,7864.26
+2024-07-02 21:00:29.549909,Actividades,Ocio,Viajes,-15.25,7849.01
+2024-07-02 21:00:29.549909,Gasolina,Transporte,Privado,-155.44,7693.57
+2024-07-03 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-14.96,7678.61
+2024-07-03 21:00:29.549909,Microsoft,Suscripciones,Software,-20.95,7657.66
+2024-07-03 21:00:29.549909,Cine,Ocio,Entretenimiento,-140.8,7516.86
+2024-07-04 21:00:29.549909,Agua,Vivienda,Suministros,-948.76,5830.38
+2024-07-04 21:00:29.549909,Actividades,Ocio,Viajes,-219.29,6779.14
+2024-07-04 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-518.43,6998.43
+2024-07-05 21:00:29.549909,Nómina,Ingresos,Nómina,1629.47,7459.85
+2024-07-06 21:00:29.549909,Agua,Vivienda,Suministros,-704.75,6755.1
+2024-07-06 21:00:29.549909,Dia,Alimentación,Supermercado,-43.29,6711.81
+2024-07-06 21:00:29.549909,Metro,Transporte,Público,-180.34,6531.47
+2024-07-07 21:00:29.549909,Teatro,Ocio,Entretenimiento,-244.38,6287.09
+2024-07-07 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-32.11,6254.98
+2024-07-08 21:00:29.549909,Restaurante,Alimentación,Restaurantes,-210.17,8412.16
+2024-07-08 21:00:29.549909,Parking,Transporte,Privado,-149.12,8622.33
+2024-07-08 21:00:29.549909,Microsoft,Suscripciones,Software,-40.64,6214.34
+2024-07-08 21:00:29.549909,Devolución,Ingresos,Otros,2646.98,8861.32
+2024-07-08 21:00:29.549909,Vuelos,Ocio,Viajes,-89.87,8771.45
+2024-07-09 21:00:29.549909,Taxi,Transporte,Público,-91.8,8320.36
+2024-07-09 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-721.26,7599.1
+2024-07-09 21:00:29.549909,Taxi,Transporte,Público,-11.95,7587.15
+2024-07-10 21:00:29.549909,Adobe,Suscripciones,Software,-38.49,6086.28
+2024-07-10 21:00:29.549909,Agua,Vivienda,Suministros,-982.92,6124.77
+2024-07-10 21:00:29.549909,Teatro,Ocio,Entretenimiento,-248.67,7107.69
+2024-07-10 21:00:29.549909,Spotify,Suscripciones,Streaming,-46.8,7540.35
+2024-07-10 21:00:29.549909,Parking,Transporte,Privado,-183.99,7356.36
+2024-07-11 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-216.32,5869.96
+2024-07-11 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-240.03,5629.93
+2024-07-11 21:00:29.549909,Material deportivo,Ocio,Deportes,-26.87,5603.06
+2024-07-11 21:00:29.549909,Teatro,Ocio,Entretenimiento,-171.42,5431.64
+2024-07-11 21:00:29.549909,Paga extra,Ingresos,Nómina,1896.8,7328.44
+2024-07-12 21:00:29.549909,Fianza,Vivienda,Alquiler,-923.95,6404.49
+2024-07-12 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-779.18,5580.28
+2024-07-12 21:00:29.549909,Netflix,Suscripciones,Streaming,-15.85,5564.43
+2024-07-12 21:00:29.549909,iCloud,Suscripciones,Software,-45.03,6359.46
+2024-07-13 21:00:29.549909,Cine,Ocio,Entretenimiento,-107.78,5456.65
+2024-07-13 21:00:29.549909,Nómina,Ingresos,Nómina,1524.46,6981.11
+2024-07-14 21:00:29.549909,Gasolina,Transporte,Privado,-134.84,6846.27
+2024-07-14 21:00:29.549909,HBO,Suscripciones,Streaming,-42.42,6803.85
+2024-07-14 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-78.49,6725.36
+2024-07-15 21:00:29.549909,Microsoft,Suscripciones,Software,-12.78,6404.92
+2024-07-15 21:00:29.549909,Spotify,Suscripciones,Streaming,-16.24,6388.68
+2024-07-15 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-203.62,6417.7
+2024-07-15 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-104.04,6621.32
+2024-07-16 21:00:29.549909,HBO,Suscripciones,Streaming,-10.82,6377.86
+2024-07-16 21:00:29.549909,HBO,Suscripciones,Streaming,-30.45,6347.41
+2024-07-16 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-25.42,6321.99
+2024-07-16 21:00:29.549909,Actividades,Ocio,Viajes,-280.43,6041.56
+2024-07-17 21:00:29.549909,Nómina,Ingresos,Nómina,1790.28,7831.84
+2024-07-17 21:00:29.549909,Nómina,Ingresos,Nómina,2800.78,10632.62
+2024-07-17 21:00:29.549909,Agua,Vivienda,Suministros,-622.52,10010.1
+2024-07-17 21:00:29.549909,Dia,Alimentación,Supermercado,-310.46,9699.64
+2024-07-18 21:00:29.549909,Spotify,Suscripciones,Streaming,-49.74,9649.9
+2024-07-19 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-151.83,9498.07
+2024-07-19 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-1040.41,8457.66
+2024-07-19 21:00:29.549909,Luz,Vivienda,Suministros,-754.32,7703.34
+2024-07-19 21:00:29.549909,Material deportivo,Ocio,Deportes,-119.74,7583.6
+2024-07-20 21:00:29.549909,Hotel,Ocio,Viajes,-159.53,7312.83
+2024-07-20 21:00:29.549909,Parking,Transporte,Privado,-24.59,7472.36
+2024-07-20 21:00:29.549909,Parking,Transporte,Privado,-73.88,7496.95
+2024-07-20 21:00:29.549909,HBO,Suscripciones,Streaming,-12.77,7570.83
+2024-07-21 21:00:29.549909,Bus,Transporte,Público,-178.94,7133.89
+2024-07-22 21:00:29.549909,Paga extra,Ingresos,Nómina,2606.11,9740.0
+2024-07-22 21:00:29.549909,Bar,Alimentación,Restaurantes,-223.38,9516.62
+2024-07-22 21:00:29.549909,Paga extra,Ingresos,Nómina,1386.56,10903.18
+2024-07-22 21:00:29.549909,Material deportivo,Ocio,Deportes,-244.4,10658.78
+2024-07-22 21:00:29.549909,Reparación,Vivienda,Mantenimiento,-900.96,9757.82
+2024-07-23 21:00:29.549909,HBO,Suscripciones,Streaming,-47.78,9233.43
+2024-07-23 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-460.22,9281.21
+2024-07-23 21:00:29.549909,Adobe,Suscripciones,Software,-16.39,9741.43
+2024-07-24 21:00:29.549909,Adobe,Suscripciones,Software,-14.89,9218.54
+2024-07-25 21:00:29.549909,Carrefour,Alimentación,Supermercado,-57.22,9161.32
+2024-07-25 21:00:29.549909,Luz,Vivienda,Suministros,-763.66,8397.66
+2024-07-25 21:00:29.549909,Dia,Alimentación,Supermercado,-159.96,8237.7
+2024-07-25 21:00:29.549909,Taxi,Transporte,Público,-15.78,8221.92
+2024-07-25 21:00:29.549909,Fianza,Vivienda,Alquiler,-582.32,7639.6
+2024-07-26 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-698.09,5919.4
+2024-07-26 21:00:29.549909,Parking,Transporte,Privado,-50.6,6617.49
+2024-07-26 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-151.36,7488.24
+2024-07-26 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-635.39,6852.85
+2024-07-26 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-184.76,6668.09
+2024-07-27 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-570.16,5349.24
+2024-07-27 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-257.8,5091.44
+2024-07-27 21:00:29.549909,HBO,Suscripciones,Streaming,-9.32,5082.12
+2024-07-27 21:00:29.549909,Fianza,Vivienda,Alquiler,-417.14,4664.98
+2024-07-28 21:00:29.549909,Paga extra,Ingresos,Nómina,2319.96,6984.94
+2024-07-28 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-1059.51,5925.43
+2024-07-28 21:00:29.549909,Gas,Vivienda,Suministros,-432.03,5493.4
+2024-07-29 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-31.55,8716.34
+2024-07-29 21:00:29.549909,Reembolso,Ingresos,Otros,1104.56,6597.96
+2024-07-29 21:00:29.549909,Parking,Transporte,Privado,-86.16,6511.8
+2024-07-29 21:00:29.549909,Paga extra,Ingresos,Nómina,2236.09,8747.89
+2024-07-30 21:00:29.549909,Regalo,Ingresos,Otros,1016.86,9440.19
+2024-07-30 21:00:29.549909,Material deportivo,Ocio,Deportes,-293.01,8423.33
+2024-07-31 21:00:29.549909,Internet,Vivienda,Suministros,-975.37,8464.82
+2024-07-31 21:00:29.549909,Devolución,Ingresos,Otros,1659.52,10124.34
+2024-08-01 21:00:29.549909,Taxi,Transporte,Público,-18.75,10105.59
+2024-08-01 21:00:29.549909,Reparación,Vivienda,Mantenimiento,-955.6,9149.99
+2024-08-01 21:00:29.549909,Reembolso,Ingresos,Otros,2119.52,11269.51
+2024-08-01 21:00:29.549909,Adobe,Suscripciones,Software,-41.13,11228.38
+2024-08-01 21:00:29.549909,Metro,Transporte,Público,-94.05,11134.33
+2024-08-02 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-30.04,11104.29
+2024-08-02 21:00:29.549909,Dia,Alimentación,Supermercado,-72.73,11031.56
+2024-08-02 21:00:29.549909,Adobe,Suscripciones,Software,-15.82,11015.74
+2024-08-02 21:00:29.549909,Reparación,Vivienda,Mantenimiento,-661.64,10354.1
+2024-08-03 21:00:29.549909,Lidl,Alimentación,Supermercado,-385.28,9968.82
+2024-08-04 21:00:29.549909,Metro,Transporte,Público,-130.68,9838.14
+2024-08-04 21:00:29.549909,Cine,Ocio,Entretenimiento,-241.9,9596.24
+2024-08-05 21:00:29.549909,Devolución,Ingresos,Otros,1400.46,9613.3
+2024-08-05 21:00:29.549909,Gasolina,Transporte,Privado,-155.33,8212.84
+2024-08-05 21:00:29.549909,Fianza,Vivienda,Alquiler,-1157.81,8368.17
+2024-08-05 21:00:29.549909,Gimnasio,Ocio,Deportes,-70.26,9525.98
+2024-08-06 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-161.05,9452.25
+2024-08-06 21:00:29.549909,Hotel,Ocio,Viajes,-192.54,9259.71
+2024-08-07 21:00:29.549909,HBO,Suscripciones,Streaming,-11.73,9247.98
+2024-08-07 21:00:29.549909,Hotel,Ocio,Viajes,-113.72,9134.26
+2024-08-07 21:00:29.549909,Spotify,Suscripciones,Streaming,-13.68,9120.58
+2024-08-07 21:00:29.549909,Gas,Vivienda,Suministros,-564.19,8556.39
+2024-08-08 21:00:29.549909,Gimnasio,Ocio,Deportes,-236.99,8319.4
+2024-08-08 21:00:29.549909,Adobe,Suscripciones,Software,-33.26,8286.14
+2024-08-08 21:00:29.549909,Gas,Vivienda,Suministros,-887.2,7398.94
+2024-08-09 21:00:29.549909,Cine,Ocio,Entretenimiento,-238.5,7160.44
+2024-08-10 21:00:29.549909,Fianza,Vivienda,Alquiler,-594.91,6565.53
+2024-08-10 21:00:29.549909,Spotify,Suscripciones,Streaming,-29.45,6536.08
+2024-08-11 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-178.61,6070.76
+2024-08-11 21:00:29.549909,Metro,Transporte,Público,-36.34,6249.37
+2024-08-11 21:00:29.549909,Netflix,Suscripciones,Streaming,-28.43,6042.33
+2024-08-11 21:00:29.549909,iCloud,Suscripciones,Software,-47.15,6488.93
+2024-08-11 21:00:29.549909,Teatro,Ocio,Entretenimiento,-203.22,6285.71
+2024-08-12 21:00:29.549909,Regalo,Ingresos,Otros,2658.08,8700.41
+2024-08-12 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-744.45,7955.96
+2024-08-13 21:00:29.549909,Adobe,Suscripciones,Software,-41.43,7914.53
+2024-08-13 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-73.66,7840.87
+2024-08-13 21:00:29.549909,Devolución,Ingresos,Otros,1421.28,9262.15
+2024-08-14 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-589.39,10147.21
+2024-08-14 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-293.23,10736.6
+2024-08-14 21:00:29.549909,Regalo,Ingresos,Otros,2587.61,11029.83
+2024-08-14 21:00:29.549909,Agua,Vivienda,Suministros,-819.93,8442.22
+2024-08-15 21:00:29.549909,Dia,Alimentación,Supermercado,-131.13,10016.08
+2024-08-15 21:00:29.549909,Parking,Transporte,Privado,-155.22,9860.86
+2024-08-16 21:00:29.549909,Reembolso,Ingresos,Otros,1602.64,11463.5
+2024-08-16 21:00:29.549909,Reembolso,Ingresos,Otros,1556.25,13019.75
+2024-08-16 21:00:29.549909,Fianza,Vivienda,Alquiler,-1053.85,11965.9
+2024-08-17 21:00:29.549909,Spotify,Suscripciones,Streaming,-40.98,11878.16
+2024-08-17 21:00:29.549909,Spotify,Suscripciones,Streaming,-26.72,11939.18
+2024-08-17 21:00:29.549909,Netflix,Suscripciones,Streaming,-20.04,11919.14
+2024-08-18 21:00:29.549909,Gimnasio,Ocio,Deportes,-100.62,11777.54
+2024-08-18 21:00:29.549909,Paga extra,Ingresos,Nómina,2526.68,14304.22
+2024-08-19 21:00:29.549909,HBO,Suscripciones,Streaming,-48.62,14255.6
+2024-08-20 21:00:29.549909,Devolución,Ingresos,Otros,1419.31,15674.91
+2024-08-20 21:00:29.549909,Paga extra,Ingresos,Nómina,2715.29,18390.2
+2024-08-20 21:00:29.549909,Teatro,Ocio,Entretenimiento,-100.5,18289.7
+2024-08-20 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-171.99,18117.71
+2024-08-21 21:00:29.549909,Internet,Vivienda,Suministros,-578.1,17539.61
+2024-08-22 21:00:29.549909,Dia,Alimentación,Supermercado,-166.45,18852.23
+2024-08-22 21:00:29.549909,Bus,Transporte,Público,-71.91,17467.7
+2024-08-22 21:00:29.549909,Teatro,Ocio,Entretenimiento,-226.33,17241.37
+2024-08-22 21:00:29.549909,Luz,Vivienda,Suministros,-544.49,16696.88
+2024-08-22 21:00:29.549909,Devolución,Ingresos,Otros,2321.8,19018.68
+2024-08-23 21:00:29.549909,Parking,Transporte,Privado,-120.53,18471.54
+2024-08-23 21:00:29.549909,Metro,Transporte,Público,-59.94,18411.6
+2024-08-23 21:00:29.549909,Gimnasio,Ocio,Deportes,-260.16,18592.07
+2024-08-24 21:00:29.549909,Fianza,Vivienda,Alquiler,-799.53,17612.07
+2024-08-25 21:00:29.549909,Fianza,Vivienda,Alquiler,-541.23,17070.84
+2024-08-26 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-315.75,16755.09
+2024-08-26 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-226.65,16528.44
+2024-08-26 21:00:29.549909,Vuelos,Ocio,Viajes,-99.32,16429.12
+2024-08-26 21:00:29.549909,Gasolina,Transporte,Privado,-127.25,16301.87
+2024-08-26 21:00:29.549909,Microsoft,Suscripciones,Software,-26.61,16275.26
+2024-08-27 21:00:29.549909,iCloud,Suscripciones,Software,-11.72,16263.54
+2024-08-27 21:00:29.549909,Fianza,Vivienda,Alquiler,-964.08,15299.46
+2024-08-27 21:00:29.549909,Nómina,Ingresos,Nómina,1373.56,16673.02
+2024-08-27 21:00:29.549909,Material deportivo,Ocio,Deportes,-50.97,16622.05
+2024-08-28 21:00:29.549909,Devolución,Ingresos,Otros,1031.39,17653.44
+2024-08-29 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-681.97,16971.47
+2024-08-29 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-900.52,16070.95
+2024-08-30 21:00:29.549909,Paga extra,Ingresos,Nómina,1778.15,20253.88
+2024-08-30 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-179.1,18475.73
+2024-08-30 21:00:29.549909,Devolución,Ingresos,Otros,2583.88,18654.83
+2024-08-31 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-71.62,20182.26
+2024-09-01 21:00:29.549909,Hotel,Ocio,Viajes,-118.5,20063.76
+2024-09-01 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-52.87,20010.89
+2024-09-01 21:00:29.549909,Teatro,Ocio,Entretenimiento,-117.12,19893.77
+2024-09-01 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-468.93,19424.84
+2024-09-01 21:00:29.549909,Taxi,Transporte,Público,-84.78,19340.06
+2024-09-02 21:00:29.549909,Internet,Vivienda,Suministros,-679.35,21574.0
+2024-09-02 21:00:29.549909,Nómina,Ingresos,Nómina,2987.68,22253.35
+2024-09-02 21:00:29.549909,Material deportivo,Ocio,Deportes,-74.39,19265.67
+2024-09-03 21:00:29.549909,Devolución,Ingresos,Otros,1207.06,22781.06
+2024-09-03 21:00:29.549909,Reembolso,Ingresos,Otros,1549.59,24330.65
+2024-09-03 21:00:29.549909,Lidl,Alimentación,Supermercado,-330.47,24000.18
+2024-09-04 21:00:29.549909,Cine,Ocio,Entretenimiento,-173.1,23827.08
+2024-09-04 21:00:29.549909,Microsoft,Suscripciones,Software,-36.01,23791.07
+2024-09-04 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-668.02,23123.05
+2024-09-05 21:00:29.549909,Metro,Transporte,Público,-138.12,22984.93
+2024-09-06 21:00:29.549909,Regalo,Ingresos,Otros,1405.36,25526.69
+2024-09-06 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-317.43,24121.33
+2024-09-06 21:00:29.549909,Vuelos,Ocio,Viajes,-279.18,25247.51
+2024-09-06 21:00:29.549909,Gasolina,Transporte,Privado,-149.47,22835.46
+2024-09-06 21:00:29.549909,Paga extra,Ingresos,Nómina,1603.3,24438.76
+2024-09-07 21:00:29.549909,Luz,Vivienda,Suministros,-813.4,24434.11
+2024-09-07 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-494.32,23939.79
+2024-09-07 21:00:29.549909,Fianza,Vivienda,Alquiler,-1123.46,22816.33
+2024-09-07 21:00:29.549909,Cine,Ocio,Entretenimiento,-214.18,22602.15
+2024-09-08 21:00:29.549909,Gimnasio,Ocio,Deportes,-265.13,22337.02
+2024-09-08 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-105.7,22231.32
+2024-09-08 21:00:29.549909,Bar,Alimentación,Restaurantes,-417.24,21814.08
+2024-09-09 21:00:29.549909,Devolución,Ingresos,Otros,2662.3,24476.38
+2024-09-09 21:00:29.549909,Metro,Transporte,Público,-25.02,24451.36
+2024-09-09 21:00:29.549909,Gas,Vivienda,Suministros,-748.4,23702.96
+2024-09-09 21:00:29.549909,Adobe,Suscripciones,Software,-6.76,23696.2
+2024-09-10 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-621.99,23074.21
+2024-09-11 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-254.38,23948.98
+2024-09-11 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-74.41,22091.88
+2024-09-11 21:00:29.549909,Nómina,Ingresos,Nómina,2111.48,24203.36
+2024-09-11 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-892.02,22182.19
+2024-09-11 21:00:29.549909,Adobe,Suscripciones,Software,-15.9,22166.29
+2024-09-12 21:00:29.549909,iCloud,Suscripciones,Software,-14.14,23934.84
+2024-09-12 21:00:29.549909,Luz,Vivienda,Suministros,-1073.61,22861.23
+2024-09-12 21:00:29.549909,Cine,Ocio,Entretenimiento,-169.76,22691.47
+2024-09-12 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-52.15,22639.32
+2024-09-12 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-183.2,22456.12
+2024-09-13 21:00:29.549909,Spotify,Suscripciones,Streaming,-30.7,22425.42
+2024-09-13 21:00:29.549909,Spotify,Suscripciones,Streaming,-5.24,22420.18
+2024-09-13 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-281.5,22138.68
+2024-09-14 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-270.2,21868.48
+2024-09-14 21:00:29.549909,Regalo,Ingresos,Otros,1911.67,23780.15
+2024-09-15 21:00:29.549909,Fianza,Vivienda,Alquiler,-613.88,23048.14
+2024-09-15 21:00:29.549909,Netflix,Suscripciones,Streaming,-46.74,23733.41
+2024-09-15 21:00:29.549909,Bus,Transporte,Público,-71.39,23662.02
+2024-09-16 21:00:29.549909,HBO,Suscripciones,Streaming,-8.26,24238.24
+2024-09-16 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-66.74,24246.5
+2024-09-16 21:00:29.549909,Nómina,Ingresos,Nómina,1358.66,24406.8
+2024-09-16 21:00:29.549909,Cine,Ocio,Entretenimiento,-93.56,24313.24
+2024-09-17 21:00:29.549909,Regalo,Ingresos,Otros,1467.59,25705.83
+2024-09-17 21:00:29.549909,Material deportivo,Ocio,Deportes,-187.32,25518.51
+2024-09-18 21:00:29.549909,Reembolso,Ingresos,Otros,2113.49,27632.0
+2024-09-19 21:00:29.549909,Metro,Transporte,Público,-53.43,27578.57
+2024-09-20 21:00:29.549909,Agua,Vivienda,Suministros,-448.31,27130.26
+2024-09-21 21:00:29.549909,Material deportivo,Ocio,Deportes,-50.33,27079.93
+2024-09-21 21:00:29.549909,Lidl,Alimentación,Supermercado,-486.91,26593.02
+2024-09-21 21:00:29.549909,Reembolso,Ingresos,Otros,1708.48,28301.5
+2024-09-21 21:00:29.549909,Nómina,Ingresos,Nómina,1840.29,30141.79
+2024-09-22 21:00:29.549909,Gimnasio,Ocio,Deportes,-41.91,30099.88
+2024-09-22 21:00:29.549909,Metro,Transporte,Público,-47.63,30052.25
+2024-09-23 21:00:29.549909,Mercadona,Alimentación,Supermercado,-474.03,33493.81
+2024-09-23 21:00:29.549909,Internet,Vivienda,Suministros,-737.59,33967.84
+2024-09-23 21:00:29.549909,Regalo,Ingresos,Otros,2164.39,32216.64
+2024-09-23 21:00:29.549909,Nómina,Ingresos,Nómina,2488.79,34705.43
+2024-09-24 21:00:29.549909,Netflix,Suscripciones,Streaming,-20.21,33473.6
+2024-09-24 21:00:29.549909,Mercadona,Alimentación,Supermercado,-487.66,32985.94
+2024-09-24 21:00:29.549909,Vuelos,Ocio,Viajes,-229.14,32756.8
+2024-09-24 21:00:29.549909,HBO,Suscripciones,Streaming,-32.79,32724.01
+2024-09-24 21:00:29.549909,Carrefour,Alimentación,Supermercado,-390.02,32333.99
+2024-09-25 21:00:29.549909,Parking,Transporte,Privado,-16.51,32317.48
+2024-09-25 21:00:29.549909,Parking,Transporte,Privado,-30.32,32287.16
+2024-09-25 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-430.81,31856.35
+2024-09-25 21:00:29.549909,Bus,Transporte,Público,-161.6,31694.75
+2024-09-25 21:00:29.549909,Gasolina,Transporte,Privado,-94.58,31600.17
+2024-09-26 21:00:29.549909,Lidl,Alimentación,Supermercado,-50.12,30228.66
+2024-09-26 21:00:29.549909,Agua,Vivienda,Suministros,-1126.33,30473.84
+2024-09-26 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-195.06,30278.78
+2024-09-26 21:00:29.549909,Spotify,Suscripciones,Streaming,-22.34,30206.32
+2024-09-27 21:00:29.549909,Bus,Transporte,Público,-44.15,29990.26
+2024-09-27 21:00:29.549909,Actividades,Ocio,Viajes,-124.19,30034.41
+2024-09-27 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-198.46,29791.8
+2024-09-27 21:00:29.549909,iCloud,Suscripciones,Software,-22.72,30183.6
+2024-09-27 21:00:29.549909,Adobe,Suscripciones,Software,-25.0,30158.6
+2024-09-28 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-436.89,29206.62
+2024-09-28 21:00:29.549909,Bus,Transporte,Público,-148.29,29643.51
+2024-09-29 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-595.43,28611.19
+2024-09-29 21:00:29.549909,Vuelos,Ocio,Viajes,-161.6,28449.59
+2024-09-29 21:00:29.549909,Paga extra,Ingresos,Nómina,2716.38,31165.97
+2024-09-29 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-142.65,31023.32
+2024-09-29 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-325.86,30697.46
+2024-09-30 21:00:29.549909,Gas,Vivienda,Suministros,-1075.03,29622.43
+2024-09-30 21:00:29.549909,Regalo,Ingresos,Otros,1325.43,30947.86
+2024-09-30 21:00:29.549909,Material deportivo,Ocio,Deportes,-288.51,30659.35
+2024-09-30 21:00:29.549909,Nómina,Ingresos,Nómina,2835.31,33494.66
+2024-09-30 21:00:29.549909,iCloud,Suscripciones,Software,-23.65,33471.01
+2024-10-01 21:00:29.549909,Cine,Ocio,Entretenimiento,-255.5,33215.51
+2024-10-02 21:00:29.549909,HBO,Suscripciones,Streaming,-7.72,35042.76
+2024-10-02 21:00:29.549909,Paga extra,Ingresos,Nómina,2242.36,35050.48
+2024-10-02 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-206.68,34836.08
+2024-10-02 21:00:29.549909,Luz,Vivienda,Suministros,-402.39,32813.12
+2024-10-02 21:00:29.549909,Spotify,Suscripciones,Streaming,-5.0,32808.12
+2024-10-03 21:00:29.549909,Teatro,Ocio,Entretenimiento,-278.2,34557.88
+2024-10-03 21:00:29.549909,iCloud,Suscripciones,Software,-15.77,34542.11
+2024-10-03 21:00:29.549909,Devolución,Ingresos,Otros,2979.77,37521.88
+2024-10-03 21:00:29.549909,Netflix,Suscripciones,Streaming,-20.45,37501.43
+2024-10-03 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-199.71,37301.72
+2024-10-04 21:00:29.549909,HBO,Suscripciones,Streaming,-32.88,37268.84
+2024-10-05 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-162.81,36929.68
+2024-10-05 21:00:29.549909,iCloud,Suscripciones,Software,-20.91,37247.93
+2024-10-05 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-155.44,37092.49
+2024-10-06 21:00:29.549909,Agua,Vivienda,Suministros,-539.7,36389.98
+2024-10-06 21:00:29.549909,Metro,Transporte,Público,-36.46,36353.52
+2024-10-07 21:00:29.549909,Taxi,Transporte,Público,-104.03,36249.49
+2024-10-08 21:00:29.549909,Spotify,Suscripciones,Streaming,-5.8,36120.42
+2024-10-08 21:00:29.549909,Gimnasio,Ocio,Deportes,-123.27,36126.22
+2024-10-09 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-213.16,38438.16
+2024-10-09 21:00:29.549909,iCloud,Suscripciones,Software,-11.71,38651.32
+2024-10-09 21:00:29.549909,Nómina,Ingresos,Nómina,2542.61,38663.03
+2024-10-10 21:00:29.549909,Bus,Transporte,Público,-136.45,40179.83
+2024-10-10 21:00:29.549909,Netflix,Suscripciones,Streaming,-30.33,38407.83
+2024-10-10 21:00:29.549909,Nómina,Ingresos,Nómina,1908.45,40316.28
+2024-10-11 21:00:29.549909,Luz,Vivienda,Suministros,-1125.54,39054.29
+2024-10-11 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-108.59,38945.7
+2024-10-12 21:00:29.549909,Mercadona,Alimentación,Supermercado,-90.67,38855.03
+2024-10-12 21:00:29.549909,Luz,Vivienda,Suministros,-892.93,37962.1
+2024-10-12 21:00:29.549909,Gas,Vivienda,Suministros,-746.96,37215.14
+2024-10-12 21:00:29.549909,Fianza,Vivienda,Alquiler,-466.08,36749.06
+2024-10-12 21:00:29.549909,Internet,Vivienda,Suministros,-615.8,36133.26
+2024-10-13 21:00:29.549909,Taxi,Transporte,Público,-130.99,36002.27
+2024-10-13 21:00:29.549909,Paga extra,Ingresos,Nómina,1501.15,37503.42
+2024-10-14 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-196.32,37307.1
+2024-10-14 21:00:29.549909,Lidl,Alimentación,Supermercado,-141.9,37165.2
+2024-10-14 21:00:29.549909,Paga extra,Ingresos,Nómina,1388.24,38553.44
+2024-10-15 21:00:29.549909,Devolución,Ingresos,Otros,2267.51,40097.26
+2024-10-15 21:00:29.549909,Luz,Vivienda,Suministros,-723.69,37829.75
+2024-10-16 21:00:29.549909,Fianza,Vivienda,Alquiler,-458.94,42335.52
+2024-10-16 21:00:29.549909,Nómina,Ingresos,Nómina,2697.2,42794.46
+2024-10-17 21:00:29.549909,Gimnasio,Ocio,Deportes,-163.09,42172.43
+2024-10-17 21:00:29.549909,Devolución,Ingresos,Otros,1919.37,44091.8
+2024-10-17 21:00:29.549909,Restaurante,Alimentación,Restaurantes,-80.85,44010.95
+2024-10-18 21:00:29.549909,HBO,Suscripciones,Streaming,-29.57,43254.74
+2024-10-18 21:00:29.549909,Parking,Transporte,Privado,-55.94,43955.01
+2024-10-18 21:00:29.549909,Mercadona,Alimentación,Supermercado,-328.36,43626.65
+2024-10-18 21:00:29.549909,iCloud,Suscripciones,Software,-17.66,43608.99
+2024-10-18 21:00:29.549909,Carrefour,Alimentación,Supermercado,-324.68,43284.31
+2024-10-19 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-413.58,42841.16
+2024-10-19 21:00:29.549909,Gasolina,Transporte,Privado,-131.13,42710.03
+2024-10-19 21:00:29.549909,Paga extra,Ingresos,Nómina,2523.59,45233.62
+2024-10-19 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-445.48,44788.14
+2024-10-20 21:00:29.549909,Carrefour,Alimentación,Supermercado,-42.03,44552.19
+2024-10-20 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-102.1,44450.09
+2024-10-20 21:00:29.549909,Dia,Alimentación,Supermercado,-193.92,44594.22
+2024-10-21 21:00:29.549909,Teatro,Ocio,Entretenimiento,-159.15,45776.87
+2024-10-21 21:00:29.549909,Vuelos,Ocio,Viajes,-86.17,45936.02
+2024-10-21 21:00:29.549909,Reembolso,Ingresos,Otros,1572.1,46022.19
+2024-10-22 21:00:29.549909,Cine,Ocio,Entretenimiento,-163.31,45613.56
+2024-10-22 21:00:29.549909,Bus,Transporte,Público,-131.36,45482.2
+2024-10-22 21:00:29.549909,Carrefour,Alimentación,Supermercado,-126.35,45355.85
+2024-10-22 21:00:29.549909,Restaurante,Alimentación,Restaurantes,-117.08,45238.77
+2024-10-22 21:00:29.549909,HBO,Suscripciones,Streaming,-45.34,45193.43
+2024-10-23 21:00:29.549909,Paga extra,Ingresos,Nómina,1191.57,46385.0
+2024-10-23 21:00:29.549909,iCloud,Suscripciones,Software,-45.83,46339.17
+2024-10-24 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-148.38,46190.79
+2024-10-24 21:00:29.549909,Taxi,Transporte,Público,-160.35,46030.44
+2024-10-25 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-119.56,45910.88
+2024-10-25 21:00:29.549909,Reembolso,Ingresos,Otros,2741.68,48652.56
+2024-10-25 21:00:29.549909,Adobe,Suscripciones,Software,-40.69,48611.87
+2024-10-26 21:00:29.549909,iCloud,Suscripciones,Software,-11.35,48600.52
+2024-10-26 21:00:29.549909,Reparación,Vivienda,Mantenimiento,-928.36,47672.16
+2024-10-27 21:00:29.549909,Material deportivo,Ocio,Deportes,-40.04,48834.26
+2024-10-27 21:00:29.549909,Regalo,Ingresos,Otros,1202.14,48874.3
+2024-10-28 21:00:29.549909,Netflix,Suscripciones,Streaming,-29.28,48804.98
+2024-10-28 21:00:29.549909,Spotify,Suscripciones,Streaming,-36.02,48768.96
+2024-10-29 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-1158.78,47610.18
+2024-10-29 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-312.71,47297.47
+2024-10-30 21:00:29.549909,Netflix,Suscripciones,Streaming,-18.66,47278.81
+2024-10-31 21:00:29.549909,Paga extra,Ingresos,Nómina,2108.85,49387.66
+2024-10-31 21:00:29.549909,Internet,Vivienda,Suministros,-753.41,48634.25
+2024-10-31 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-47.39,48586.86
+2024-11-01 21:00:29.549909,Vuelos,Ocio,Viajes,-46.51,48540.35
+2024-11-01 21:00:29.549909,Devolución,Ingresos,Otros,1107.03,49647.38
+2024-11-01 21:00:29.549909,Spotify,Suscripciones,Streaming,-8.79,49638.59
+2024-11-01 21:00:29.549909,Reembolso,Ingresos,Otros,1621.73,51260.32
+2024-11-01 21:00:29.549909,Fianza,Vivienda,Alquiler,-608.5,50651.82
+2024-11-02 21:00:29.549909,Gasolina,Transporte,Privado,-163.37,53547.95
+2024-11-02 21:00:29.549909,Agua,Vivienda,Suministros,-735.89,53711.32
+2024-11-02 21:00:29.549909,Luz,Vivienda,Suministros,-851.85,52696.1
+2024-11-02 21:00:29.549909,Reembolso,Ingresos,Otros,1689.46,52341.28
+2024-11-02 21:00:29.549909,Reembolso,Ingresos,Otros,2105.93,54447.21
+2024-11-03 21:00:29.549909,Regalo,Ingresos,Otros,1533.08,54229.18
+2024-11-03 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-456.1,53773.08
+2024-11-03 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-271.57,53501.51
+2024-11-03 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-213.64,53287.87
+2024-11-03 21:00:29.549909,Nómina,Ingresos,Nómina,2402.19,55690.06
+2024-11-04 21:00:29.549909,Gas,Vivienda,Suministros,-1005.59,53018.54
+2024-11-04 21:00:29.549909,Gimnasio,Ocio,Deportes,-89.92,54024.13
+2024-11-04 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-451.1,55238.96
+2024-11-04 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-266.0,54972.96
+2024-11-04 21:00:29.549909,Fianza,Vivienda,Alquiler,-858.91,54114.05
+2024-11-05 21:00:29.549909,Lidl,Alimentación,Supermercado,-138.53,52880.01
+2024-11-05 21:00:29.549909,Bus,Transporte,Público,-158.62,52721.39
+2024-11-05 21:00:29.549909,Reembolso,Ingresos,Otros,2531.7,55253.09
+2024-11-06 21:00:29.549909,Actividades,Ocio,Viajes,-125.18,55127.91
+2024-11-06 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-331.45,54796.46
+2024-11-07 21:00:29.549909,Hotel,Ocio,Viajes,-179.04,54617.42
+2024-11-08 21:00:29.549909,Hotel,Ocio,Viajes,-187.64,54215.91
+2024-11-08 21:00:29.549909,Gimnasio,Ocio,Deportes,-213.87,54403.55
+2024-11-09 21:00:29.549909,Spotify,Suscripciones,Streaming,-41.78,54174.13
+2024-11-09 21:00:29.549909,Paga extra,Ingresos,Nómina,1638.45,55812.58
+2024-11-10 21:00:29.549909,Material deportivo,Ocio,Deportes,-204.34,55608.24
+2024-11-11 21:00:29.549909,HBO,Suscripciones,Streaming,-33.01,55575.23
+2024-11-11 21:00:29.549909,Spotify,Suscripciones,Streaming,-29.5,55545.73
+2024-11-11 21:00:29.549909,Parking,Transporte,Privado,-94.17,55451.56
+2024-11-11 21:00:29.549909,Fianza,Vivienda,Alquiler,-580.72,54870.84
+2024-11-11 21:00:29.549909,Fianza,Vivienda,Alquiler,-535.63,54335.21
+2024-11-12 21:00:29.549909,Uber Eats,Alimentación,Comida para llevar,-298.65,53534.98
+2024-11-12 21:00:29.549909,Spotify,Suscripciones,Streaming,-16.28,54318.93
+2024-11-12 21:00:29.549909,Dia,Alimentación,Supermercado,-485.3,53833.63
+2024-11-13 21:00:29.549909,Paga extra,Ingresos,Nómina,1435.02,54970.0
+2024-11-13 21:00:29.549909,Gas,Vivienda,Suministros,-742.67,54227.33
+2024-11-13 21:00:29.549909,Paga extra,Ingresos,Nómina,1268.63,55495.96
+2024-11-13 21:00:29.549909,Taxi,Transporte,Público,-44.75,55451.21
+2024-11-14 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-963.69,53156.61
+2024-11-14 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-1133.92,54120.3
+2024-11-14 21:00:29.549909,Glovo,Alimentación,Comida para llevar,-53.96,55397.25
+2024-11-14 21:00:29.549909,Vuelos,Ocio,Viajes,-143.03,55254.22
+2024-11-15 21:00:29.549909,HBO,Suscripciones,Streaming,-46.03,53110.58
+2024-11-15 21:00:29.549909,Lidl,Alimentación,Supermercado,-164.48,52946.1
+2024-11-15 21:00:29.549909,Devolución,Ingresos,Otros,1059.7,54005.8
+2024-11-16 21:00:29.549909,Paga extra,Ingresos,Nómina,2024.08,56029.88
+2024-11-17 21:00:29.549909,Internet,Vivienda,Suministros,-995.65,55034.23
+2024-11-18 21:00:29.549909,Spotify,Suscripciones,Streaming,-47.71,54986.52
+2024-11-18 21:00:29.549909,Taxi,Transporte,Público,-188.79,54797.73
+2024-11-18 21:00:29.549909,Microsoft,Suscripciones,Software,-39.43,54758.3
+2024-11-18 21:00:29.549909,Lidl,Alimentación,Supermercado,-399.31,54358.99
+2024-11-18 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-92.53,54266.46
+2024-11-19 21:00:29.549909,Reembolso,Ingresos,Otros,1096.75,53709.47
+2024-11-19 21:00:29.549909,Material deportivo,Ocio,Deportes,-264.2,52820.7
+2024-11-19 21:00:29.549909,Material deportivo,Ocio,Deportes,-207.98,52612.72
+2024-11-19 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-1162.81,53103.65
+2024-11-19 21:00:29.549909,HBO,Suscripciones,Streaming,-18.75,53084.9
+2024-11-20 21:00:29.549909,Spotify,Suscripciones,Streaming,-29.18,53680.29
+2024-11-21 21:00:29.549909,Internet,Vivienda,Suministros,-507.85,53172.44
+2024-11-21 21:00:29.549909,Regalo,Ingresos,Otros,1142.85,54315.29
+2024-11-21 21:00:29.549909,Muebles,Vivienda,Mantenimiento,-508.04,53807.25
+2024-11-22 21:00:29.549909,Material deportivo,Ocio,Deportes,-103.35,53703.9
+2024-11-22 21:00:29.549909,Material deportivo,Ocio,Deportes,-99.22,53604.68
+2024-11-22 21:00:29.549909,Metro,Transporte,Público,-110.34,53494.34
+2024-11-23 21:00:29.549909,Gasolina,Transporte,Privado,-63.13,57438.63
+2024-11-23 21:00:29.549909,Metro,Transporte,Público,-136.94,53357.4
+2024-11-23 21:00:29.549909,Nómina,Ingresos,Nómina,2056.53,55413.93
+2024-11-23 21:00:29.549909,Actividades,Ocio,Viajes,-243.84,55170.09
+2024-11-23 21:00:29.549909,Regalo,Ingresos,Otros,2331.67,57501.76
+2024-11-24 21:00:29.549909,Microsoft,Suscripciones,Software,-14.93,57423.7
+2024-11-25 21:00:29.549909,Gimnasio,Ocio,Deportes,-249.75,54652.6
+2024-11-25 21:00:29.549909,iCloud,Suscripciones,Software,-46.93,54902.35
+2024-11-25 21:00:29.549909,Fianza,Vivienda,Alquiler,-1076.59,54949.28
+2024-11-25 21:00:29.549909,Fianza,Vivienda,Alquiler,-978.95,56025.87
+2024-11-25 21:00:29.549909,Bar,Alimentación,Restaurantes,-418.88,57004.82
+2024-11-26 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-760.65,53891.95
+2024-11-26 21:00:29.549909,Cafetería,Alimentación,Restaurantes,-58.75,53833.2
+2024-11-26 21:00:29.549909,Fianza,Vivienda,Alquiler,-1195.15,52638.05
+2024-11-27 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-888.71,51749.34
+2024-11-28 21:00:29.549909,Dia,Alimentación,Supermercado,-258.22,51491.12
+2024-11-28 21:00:29.549909,Material deportivo,Ocio,Deportes,-93.39,51397.73
+2024-11-28 21:00:29.549909,Parking,Transporte,Privado,-122.09,51275.64
+2024-11-28 21:00:29.549909,Spotify,Suscripciones,Streaming,-14.9,51260.74
+2024-11-28 21:00:29.549909,Limpieza,Vivienda,Mantenimiento,-581.43,50679.31
+2024-11-29 21:00:29.549909,Actividades,Ocio,Viajes,-216.36,48442.45
+2024-11-29 21:00:29.549909,Reparación,Vivienda,Mantenimiento,-1118.27,48658.81
+2024-11-29 21:00:29.549909,Carrefour,Alimentación,Supermercado,-400.53,48041.92
+2024-11-29 21:00:29.549909,Restaurante,Alimentación,Restaurantes,-186.98,50492.33
+2024-11-29 21:00:29.549909,Fianza,Vivienda,Alquiler,-715.25,49777.08
+2024-11-30 21:00:29.549909,Actividades,Ocio,Viajes,-103.12,47938.8
+2024-11-30 21:00:29.549909,Mantenimiento coche,Transporte,Privado,-175.97,47762.83
+2024-11-30 21:00:29.549909,Paga extra,Ingresos,Nómina,1584.88,49347.71
+2024-12-01 21:00:29.549909,Devolución,Ingresos,Otros,2247.1,51023.74
+2024-12-01 21:00:29.549909,Just Eat,Alimentación,Comida para llevar,-163.45,49033.18
+2024-12-01 21:00:29.549909,Bar,Alimentación,Restaurantes,-256.54,48776.64
+2024-12-01 21:00:29.549909,Conciertos,Ocio,Entretenimiento,-108.34,49239.37
+2024-12-01 21:00:29.549909,Adobe,Suscripciones,Software,-42.74,49196.63
+2024-12-02 21:00:29.549909,Reembolso,Ingresos,Otros,2362.76,53386.5
+2024-12-02 21:00:29.549909,Paga extra,Ingresos,Nómina,1323.08,54709.58
+2024-12-03 21:00:29.549909,Vuelos,Ocio,Viajes,-221.42,54488.16
+2024-12-03 21:00:29.549909,Gimnasio,Ocio,Deportes,-241.98,54246.18
+2024-12-03 21:00:29.549909,iCloud,Suscripciones,Software,-16.31,54229.87
+2024-12-04 21:00:29.549909,Devolución,Ingresos,Otros,2798.38,57028.25
+2024-12-05 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-1135.7,58043.41
+2024-12-05 21:00:29.549909,Lidl,Alimentación,Supermercado,-403.21,57640.2
+2024-12-05 21:00:29.549909,Devolución,Ingresos,Otros,2374.35,59402.6
+2024-12-05 21:00:29.549909,Teatro,Ocio,Entretenimiento,-223.49,59179.11
+2024-12-05 21:00:29.549909,Material deportivo,Ocio,Deportes,-37.67,57602.53
+2024-12-06 21:00:29.549909,Alquiler piso,Vivienda,Alquiler,-1008.28,56550.41
+2024-12-06 21:00:29.549909,Spotify,Suscripciones,Streaming,-43.84,57558.69
+2024-12-06 21:00:29.549909,Microsoft,Suscripciones,Software,-17.05,56533.36
