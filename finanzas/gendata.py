@@ -7,43 +7,43 @@ import pandas as pd
 
 # Define categories and their subcategories with typical concepts
 CATEGORIES = {
-    "Vivienda": {
-        "Alquiler": ["Alquiler piso", "Fianza"],
-        "Suministros": ["Luz", "Agua", "Gas", "Internet"],
-        "Mantenimiento": ["Reparación", "Limpieza", "Muebles"],
+    "Housing": {
+        "Rent": ["Apartment Rent", "Deposit"],
+        "Utilities": ["Electricity", "Water", "Gas", "Internet"],
+        "Maintenance": ["Repairs", "Cleaning", "Furniture"],
     },
-    "Alimentación": {
-        "Supermercado": ["Mercadona", "Carrefour", "Lidl", "Dia"],
-        "Restaurantes": ["Restaurante", "Bar", "Cafetería"],
-        "Comida para llevar": ["Glovo", "Uber Eats", "Just Eat"],
+    "Food": {
+        "Supermarket": ["Mercadona", "Carrefour", "Lidl", "Dia"],
+        "Restaurants": ["Restaurant", "Bar", "Cafe"],
+        "Takeaway": ["Glovo", "Uber Eats", "Just Eat"],
     },
-    "Transporte": {
-        "Público": ["Metro", "Bus", "Taxi"],
-        "Privado": ["Gasolina", "Parking", "Mantenimiento coche"],
+    "Transport": {
+        "Public": ["Metro", "Bus", "Taxi"],
+        "Private": ["Gas", "Parking", "Car Maintenance"],
     },
-    "Ocio": {
-        "Entretenimiento": ["Cine", "Teatro", "Conciertos"],
-        "Deportes": ["Gimnasio", "Material deportivo"],
-        "Viajes": ["Vuelos", "Hotel", "Actividades"],
+    "Leisure": {
+        "Entertainment": ["Cinema", "Theater", "Concerts"],
+        "Sports": ["Gym", "Sports Equipment"],
+        "Travel": ["Flights", "Hotel", "Activities"],
     },
-    "Suscripciones": {
+    "Subscriptions": {
         "Streaming": ["Netflix", "Spotify", "HBO"],
         "Software": ["Adobe", "Microsoft", "iCloud"],
     },
-    "Ingresos": {
-        "Nómina": ["Nómina", "Paga extra"],
-        "Otros": ["Devolución", "Regalo", "Reembolso"],
+    "Income": {
+        "Salary": ["Salary", "Bonus"],
+        "Other": ["Refund", "Gift", "Reimbursement"],
     },
 }
 
 # Define typical amounts for each category
 AMOUNT_RANGES = {
-    "Vivienda": (-1200, -400),
-    "Alimentación": (-500, -20),
-    "Transporte": (-200, -10),
-    "Ocio": (-300, -15),
-    "Suscripciones": (-50, -5),
-    "Ingresos": (1000, 3000),
+    "Housing": (-1200, -400),
+    "Food": (-500, -20),
+    "Transport": (-200, -10),
+    "Leisure": (-300, -15),
+    "Subscriptions": (-50, -5),
+    "Income": (1000, 3000),
 }
 
 
@@ -77,12 +77,12 @@ def generate_transactions(
 
             transactions.append(
                 {
-                    "Fecha": current_date,
-                    "Concepto": concept,
+                    "Date": current_date,
+                    "Concept": concept,
                     "Category": category,
                     "Subcategory": subcategory,
-                    "Importe": amount,
-                    "Saldo": round(current_balance, 2),
+                    "Amount": amount,
+                    "Balance": round(current_balance, 2),
                 }
             )
 
@@ -105,14 +105,14 @@ def main() -> None:
     )
 
     # Sort by date
-    df = df.sort_values("Fecha")
+    df = df.sort_values("Date")
 
     # Save to CSV
     output_path = "./data/fake_dataset.csv".format()
     df.to_csv(output_path, index=False)
     print(f"Generated {len(df)} transactions and saved to {output_path}")
-    print(f"Date range: {df['Fecha'].min()} to {df['Fecha'].max()}")
-    print(f"Final balance: {df['Saldo'].iloc[-1]:,.2f}€")
+    print(f"Date range: {df['Date'].min()} to {df['Date'].max()}")
+    print(f"Final balance: {df['Balance'].iloc[-1]:,.2f}€")
 
 
 if __name__ == "__main__":

@@ -8,38 +8,37 @@ including expense tracking, income analysis, and balance projections. Features i
 - Customizable date range and category filters
 """
 
-import locale
+from __future__ import annotations
+
 from calendar import monthrange
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 
 import numpy as np
 import pandas as pd
-import plotly.express as px  # type:  ignore
+import plotly.express as px  # type: ignore[import-untyped]
 import streamlit as st
 
-# Es locale usupported by streamlit remote server
-# locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")  # Set locale to Spanish
 
+def load_dataset(path: str | st.runtime.uploaded_file_manager.UploadedFile) -> pd.DataFrame:
+    """Load and preprocess the financial dataset from a CSV file or uploaded file."""
 
-def load_dataset(path: str) -> pd.DataFrame:
-    """Load and preprocess the financial dataset from a CSV file."""
-    df = pd.read_csv(path)
-    df["Fecha"] = pd.to_datetime(df["Fecha"])
-    df["Saldo"] = convert_to_numeric(df["Saldo"])
-    df["Importe"] = convert_to_numeric(df["Importe"])
-    return df
+    def convert_to_numeric(series: pd.Series) -> pd.Series:
+        if series.dtype == object:  # Only process strings
+            return pd.to_numeric(series.str.replace("€", "").str.replace(".", "").str.replace(",", "."))
+        return series
 
-
-def convert_to_numeric(series: pd.Series) -> pd.Series:
-    if series.dtype == object:  # Only process strings
-        return pd.to_numeric(series.str.replace("€", "").str.replace(".", "").str.replace(",", "."))
-    return series
+    # Both string paths and uploaded files can be read directly by pd.read_csv
+    data = pd.read_csv(path)
+    data["Date"] = pd.to_datetime(data["Date"])
+    data["Balance"] = convert_to_numeric(data["Balance"])
+    data["Amount"] = convert_to_numeric(data["Amount"])
+    return data
 
 
 def get_date_range(df: pd.DataFrame) -> tuple[date, date]:
     """Extract the minimum and maximum dates from the dataset."""
-    min_date = df["Fecha"].min().date()
-    max_date = df["Fecha"].max().date()
+    min_date = df["Date"].min().date()
+    max_date = df["Date"].max().date()
     return min_date, max_date
 
 
@@ -49,28 +48,27 @@ def filter_data(
     last_day: date,
 ) -> pd.DataFrame:
     """Filter dataset by date range."""
-    filtered_df = df[(df["Fecha"] >= pd.Timestamp(first_day)) & (df["Fecha"] <= pd.Timestamp(last_day))]
-    return filtered_df
+    return df[(df["Date"] >= pd.Timestamp(first_day)) & (df["Date"] <= pd.Timestamp(last_day))]
 
 
 def calculate_kpis(filtered_df: pd.DataFrame) -> tuple[float, float]:
     """Calculate total expenses and income from the filtered dataset."""
-    total_expenses = filtered_df[filtered_df["Importe"] < 0]["Importe"].sum()
-    total_income = filtered_df[filtered_df["Importe"] > 0]["Importe"].sum()
+    total_expenses = filtered_df[filtered_df["Amount"] < 0]["Amount"].sum()
+    total_income = filtered_df[filtered_df["Amount"] > 0]["Amount"].sum()
     return total_expenses, total_income
 
 
 def create_treemap(df: pd.DataFrame, total: float, title: str) -> px.treemap:
     """Create a treemap visualization from a DataFrame."""
     df["Entry"] = df.apply(
-        lambda x: f"{x['Concepto']} ({x['Importe']:,.2f}€) - {x['Fecha'].strftime('%d/%m/%Y')}",
+        lambda x: f"{x['Concept']} ({x['Amount']:,.2f}€) - {x['Date'].strftime('%d/%m/%Y')}",
         axis=1,
     )
     df["Total"] = f"Total {title}: {total:,.2f}€"
     fig = px.treemap(
         df,
         path=["Total", "Category", "Subcategory", "Entry"],
-        values="Importe",
+        values="Amount",
         title=title,
     )
     fig.update_traces(
@@ -84,31 +82,35 @@ def create_treemap(df: pd.DataFrame, total: float, title: str) -> px.treemap:
 
 def setup_page() -> None:
     """Set up the Streamlit page configuration."""
-    st.set_page_config(page_title="Análisis Financiero", page_icon="", layout="wide")
-    st.title("Panel Financiero")
+    st.set_page_config(page_title="Financial Analysis", page_icon="", layout="wide")
+    st.title("Financial Dashboard")
 
 
 def display_sidebar_filters(
-    df: pd.DataFrame,
     min_date: date,
     max_date: date,
 ) -> tuple[date, date]:
     """Create sidebar filters and return selected options."""
-    st.sidebar.header("Filtros")
+    st.sidebar.header("Filters")
 
     if min_date > max_date:
         min_date, max_date = max_date, min_date
     month_labels = [d.strftime("%B %Y").capitalize() for d in pd.date_range(start=min_date, end=max_date, freq="MS")]
 
     selected_month_range = st.sidebar.select_slider(
-        "Seleccionar Rango de Meses",
+        "Select Month Range",
         options=range(len(month_labels)),
         value=(0, len(month_labels) - 1),
         format_func=lambda x: month_labels[x],
     )
 
     months = pd.to_datetime(month_labels, format="%B %Y")
-    first_day = datetime(months[selected_month_range[0]].year, months[selected_month_range[0]].month, 1).date()
+    first_day = datetime(
+        months[selected_month_range[0]].year,
+        months[selected_month_range[0]].month,
+        1,
+        tzinfo=timezone.utc,
+    ).date()
     last_day = min(
         datetime(
             months[selected_month_range[1]].year,
@@ -117,6 +119,7 @@ def display_sidebar_filters(
                 months[selected_month_range[1]].year,
                 months[selected_month_range[1]].month,
             )[1],
+            tzinfo=timezone.utc,
         ).date(),
         max_date,
     )
@@ -129,75 +132,74 @@ def display_kpis(filtered_df: pd.DataFrame) -> None:
     total_expenses, total_income = calculate_kpis(filtered_df)
     col1, col2 = st.columns(2)
     with col1:
-        st.metric("Gastos Totales", f"{abs(total_expenses):,.2f}€")
+        st.metric("Total Expenses", f"{abs(total_expenses):,.2f}€")
     with col2:
-        st.metric("Ingresos Totales", f"{total_income:,.2f}€")
+        st.metric("Total Income", f"{total_income:,.2f}€")
 
 
 def format_date_range(first_day: date, last_day: date) -> str:
     """Format date range in a more natural way."""
     if first_day.year == last_day.year:
         if first_day.month == last_day.month:
-            return f"{first_day.strftime('%d')} al {last_day.strftime('%d')} de {last_day.strftime('%B de %Y')}"
-        return f"{first_day.strftime('%d de %B')} al {last_day.strftime('%d de %B de %Y')}"
-    return f"{first_day.strftime('%d de %B de %Y')} al {last_day.strftime('%d de %B de %Y')}"
+            return f"{first_day.strftime('%d')} to {last_day.strftime('%d')} of {last_day.strftime('%B %Y')}"
+        return f"{first_day.strftime('%d %B')} to {last_day.strftime('%d %B %Y')}"
+    return f"{first_day.strftime('%d %B %Y')} to {last_day.strftime('%d %B %Y')}"
 
 
 def display_treemaps(filtered_df: pd.DataFrame, total_expenses: float, total_income: float) -> None:
     """Display treemaps for income and expenses."""
-    st.subheader("Desglose de Ingresos")
-    earnings_df = filtered_df[filtered_df["Importe"] > 0].copy()
-    earnings_treemap_fig = create_treemap(earnings_df, total_income, "Desglose de Ingresos")
+    st.subheader("Income Breakdown")
+    earnings_df = filtered_df[filtered_df["Amount"] > 0].copy()
+    earnings_treemap_fig = create_treemap(earnings_df, total_income, "Income Breakdown")
     st.plotly_chart(earnings_treemap_fig, use_container_width=True)
 
-    st.subheader("Desglose de Gastos")
-    expenses_df = filtered_df[filtered_df["Importe"] < 0].copy()
-    expenses_df["Importe"] = expenses_df["Importe"].abs()
-    expenses_treemap_fig = create_treemap(expenses_df, abs(total_expenses), "Desglose de Gastos")
+    st.subheader("Expense Breakdown")
+    expenses_df = filtered_df[filtered_df["Amount"] < 0].copy()
+    expenses_df["Amount"] = expenses_df["Amount"].abs()
+    expenses_treemap_fig = create_treemap(expenses_df, abs(total_expenses), "Expense Breakdown")
     st.plotly_chart(expenses_treemap_fig, use_container_width=True)
 
 
 def calculate_monthly_averages(df: pd.DataFrame) -> pd.DataFrame:
     """Calculate average monthly spending for each category/subcategory."""
     # Get number of unique months in the dataset
-    num_months = df["Fecha"].dt.to_period("M").nunique()
+    num_months = df["Date"].dt.to_period("M").nunique()
 
     # Group by category and subcategory and calculate monthly averages
-    monthly_avg = (
-        df[df["Importe"] < 0]
-        .groupby(["Category", "Subcategory"])["Importe"]
+    return (
+        df[df["Amount"] < 0]
+        .groupby(["Category", "Subcategory"])["Amount"]
         .sum()
         .div(-num_months)  # Divide by number of months and make positive
         .reset_index()
     )
-    return monthly_avg
 
 
 def display_monthly_averages(filtered_df: pd.DataFrame) -> None:
     """Display treemap for average monthly spending."""
-    st.subheader("Promedio Mensual de Gastos")
+    st.subheader("Monthly Average Expenses")
 
     monthly_avg_df = calculate_monthly_averages(filtered_df)
-    total_monthly_avg = monthly_avg_df["Importe"].sum()
+    total_monthly_avg = monthly_avg_df["Amount"].sum()
 
     # Create simplified entry labels for averages
     monthly_avg_df["Entry"] = monthly_avg_df.apply(
-        lambda x: f"{x['Subcategory']} ({x['Importe']:,.2f}€/mes)",
+        lambda x: f"{x['Subcategory']} ({x['Amount']:,.2f}€/month)",
         axis=1,
     )
-    monthly_avg_df["Total"] = f"Promedio Mensual: {total_monthly_avg:,.2f}€"
+    monthly_avg_df["Total"] = f"Monthly Average: {total_monthly_avg:,.2f}€"
 
     fig = px.treemap(
         monthly_avg_df,
         path=["Total", "Category", "Entry"],
-        values="Importe",
-        title="Promedio Mensual de Gastos por Categoría",
+        values="Amount",
+        title="Monthly Average Expenses by Category",
     )
 
     fig.update_traces(
         textinfo="label+value",
         texttemplate="%{label}<br>%{value:,.2f}€",
-        hovertemplate="%{label}<br>%{value:,.2f}€/mes<extra></extra>",
+        hovertemplate="%{label}<br>%{value:,.2f}€/month<extra></extra>",
     )
     fig.update_layout(height=600)
 
@@ -206,135 +208,141 @@ def display_monthly_averages(filtered_df: pd.DataFrame) -> None:
 
 def display_trend_analysis(filtered_df: pd.DataFrame) -> None:
     """Display trend analysis and projection with an improved UI layout."""
-    st.subheader("Análisis de Tendencia y Proyección de Saldo")
+    st.subheader("Balance Trend Analysis and Projection")
 
     # Prepare daily balance data
-    trend_df = filtered_df.sort_values("Fecha").groupby("Fecha")["Saldo"].last().reset_index()
-    current_balance = trend_df["Saldo"].iloc[-1]
-    last_date = trend_df["Fecha"].max()
+    trend_df = filtered_df.sort_values("Date").groupby("Date")["Balance"].last().reset_index()
+    current_balance = trend_df["Balance"].iloc[-1]
+    last_date = trend_df["Date"].max()
 
     # Calculate historical metrics
-    days_in_data = (last_date - trend_df["Fecha"].min()).days + 1
-    historical_daily_rate = (trend_df["Saldo"].iloc[-1] - trend_df["Saldo"].iloc[0]) / days_in_data
+    days_in_data = (last_date - trend_df["Date"].min()).days + 1
+    historical_daily_rate = (trend_df["Balance"].iloc[-1] - trend_df["Balance"].iloc[0]) / days_in_data
     historical_monthly_rate = historical_daily_rate * 30
 
     # Create three columns for better UI organization
     col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
-        st.metric("Saldo Actual", f"{current_balance:,.2f}€")
+        st.metric("Current Balance", f"{current_balance:,.2f}€")
 
     with col2:
         st.metric(
-            "Ritmo Histórico Mensual",
+            "Historical Monthly Rate",
             f"{historical_monthly_rate:,.2f}€",
-            delta=f"{historical_monthly_rate/current_balance*100:.1f}% mensual",
+            delta=f"{historical_monthly_rate/current_balance*100:.1f}% monthly",
         )
 
     with col3:
         minimum_balance = st.number_input(
-            "Saldo mínimo (€)",
-            min_value=0,
-            value=int(current_balance / 2),
+            "Target Balance(€)",
+            value=int(current_balance * 2) if current_balance > 0 else 1000,
             step=1000,
             format="%d",
         )
 
     # Projection controls in an expander
-    with st.expander("Configurar Proyección", expanded=True):
+    with st.expander("Configure Projection", expanded=True):
         col1, col2 = st.columns([1, 1])
         with col1:
             projection_type = st.radio(
-                "Tipo de Proyección",
-                ["Histórica", "Personalizada"],
+                "Projection Type",
+                ["Historical", "Custom"],
                 horizontal=True,
             )
 
         with col2:
             monthly_rate = st.number_input(
-                "Ritmo mensual objetivo (€)",
+                "Custom monthly rate (€)",
                 value=int(historical_monthly_rate),
                 step=100,
                 format="%d",
-                disabled=(projection_type == "Histórica"),
+                disabled=(projection_type == "Historical"),
             )
 
     # Calculate target dates
-    if projection_type == "Histórica":
+    if projection_type == "Historical":
         monthly_rate = historical_monthly_rate
 
     if monthly_rate != 0:
-        # Calculate days to both minimum balance and zero
-        days_to_min = abs((minimum_balance - current_balance) / (monthly_rate / 30))
-        days_to_zero = abs((0 - current_balance) / (monthly_rate / 30))
+        # Calculate direction of movement needed and actual movement
+        target_direction = 1 if minimum_balance > current_balance else -1
+        rate_direction = 1 if monthly_rate > 0 else -1
 
-        target_date = datetime.now().date() + pd.Timedelta(days=int(days_to_min))
-        zero_date = datetime.now().date() + pd.Timedelta(days=int(days_to_zero))
+        # Check if we're moving in the wrong direction
+        if target_direction != rate_direction:
+            st.warning(
+                "⚠️ With the current monthly rate of "
+                f"**{monthly_rate:,.0f}€**, you will never reach the target of "
+                f"**{minimum_balance:,.0f}€** because the balance is moving in the opposite direction."
+            )
+        else:
+            # Calculate days to target
+            effective_rate = abs(monthly_rate)
+            days_to_target = abs((minimum_balance - current_balance) / (effective_rate / 30))
+            target_date = datetime.now(tz=timezone.utc).date() + pd.Timedelta(days=int(days_to_target))
 
-        # Use the later date for projection
-        projection_end_date = zero_date if monthly_rate < 0 else target_date
+            direction_text = "increase" if target_direction > 0 else "decrease"
+            st.info(
+                f"With a monthly {direction_text} of **{effective_rate:,.0f}€**, "
+                f"you will reach the target of **{minimum_balance:,.0f}€** "
+                f"on **{target_date.strftime('%d/%m/%Y')}** "
+                f"({int(days_to_target)} days)",
+            )
 
-        st.info(
-            f"Con un ritmo de ahorro de **{monthly_rate:,.0f}€/mes**, "
-            f"alcanzarás el objetivo de **{minimum_balance:,.0f}€** "
-            f"el **{target_date.strftime('%d/%m/%Y')}** "
-            f"({int(days_to_min)} días)"
+        # Create the plot
+        fig = px.line(
+            trend_df,
+            x="Date",
+            y="Balance",
+            title="Balance Evolution and Projection",
         )
 
-    # Create the plot
-    fig = px.line(
-        trend_df,
-        x="Fecha",
-        y="Saldo",
-        title="Evolución del Saldo y Proyección",
-    )
+        # Add projection line only if we're moving in the right direction
+        if target_direction == rate_direction:
+            target_dates = pd.date_range(start=last_date, end=target_date, freq="D")[1:]
+            target_values = np.linspace(current_balance, minimum_balance, len(target_dates) + 1)[1:].round(2)
+            fig.add_scatter(
+                x=target_dates,
+                y=target_values,
+                line={"dash": "dot", "color": "green"},
+                name=f"Projection ({monthly_rate:,.0f}€/month)",
+            )
 
-    # Add projection line
-    target_dates = pd.date_range(start=last_date, end=projection_end_date, freq="D")[1:]
-    final_value = 0 if monthly_rate < 0 else minimum_balance
-    target_values = np.linspace(current_balance, final_value, len(target_dates) + 1)[1:].round(2)
-    fig.add_scatter(
-        x=target_dates,
-        y=target_values,
-        line={"dash": "dot", "color": "green"},
-        name=f"Proyección ({monthly_rate:,.0f}€/mes)",
-    )
+        # Add target balance line
+        fig.add_hline(
+            y=minimum_balance,
+            line_dash="dash",
+            line_color="red",
+            annotation_text=f"Target: {minimum_balance:,.0f}€",
+        )
 
-    # Add target balance line
-    fig.add_hline(
-        y=minimum_balance,
-        line_dash="dash",
-        line_color="red",
-        annotation_text=f"Objetivo: {minimum_balance:,.0f}€",
-    )
+        # Update layout with more detailed x-axis and vertical month lines
+        fig.update_layout(
+            xaxis_title="Date",
+            yaxis_title="Balance (€)",
+            hovermode="x unified",
+            yaxis={
+                "tickformat": ",d€",
+                "ticksuffix": "€",
+            },
+            xaxis={
+                "dtick": "M1",
+                "tickformat": "%b %Y",
+                "showgrid": True,
+                "gridcolor": "rgba(128, 128, 128, 0.2)",
+                "gridwidth": 1,
+            },
+            legend={
+                "yanchor": "top",
+                "y": 0.99,
+                "xanchor": "left",
+                "x": 0.01,
+                "bgcolor": "rgba(255, 255, 255, 0.8)",
+            },
+        )
 
-    # Update layout with more detailed x-axis and vertical month lines
-    fig.update_layout(
-        xaxis_title="Fecha",
-        yaxis_title="Saldo (€)",
-        hovermode="x unified",
-        yaxis={
-            "tickformat": ",d€",
-            "ticksuffix": "€",
-            "rangemode": "nonnegative",  # Forces y-axis to start at 0
-        },
-        xaxis={
-            "dtick": "M1",
-            "tickformat": "%b %Y",
-            "showgrid": True,
-            "gridcolor": "rgba(128, 128, 128, 0.2)",
-            "gridwidth": 1,
-        },
-        legend=dict(
-            yanchor="top",
-            y=0.99,
-            xanchor="left",
-            x=0.01,
-            bgcolor="rgba(255, 255, 255, 0.8)",
-        ),
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
 
 def display_data_grid(df: pd.DataFrame) -> None:
@@ -344,12 +352,12 @@ def display_data_grid(df: pd.DataFrame) -> None:
 
     # Reorder and rename columns for better display
     columns = {
-        "Fecha": "Fecha",
-        "Concepto": "Concepto",
-        "Category": "Categoría",
-        "Subcategory": "Subcategoría",
-        "Importe": "Importe",
-        "Saldo": "Saldo",
+        "Date": "Date",
+        "Concept": "Concept",
+        "Category": "Category",
+        "Subcategory": "Subcategory",
+        "Amount": "Amount",
+        "Balance": "Balance",
     }
 
     grid_df = grid_df[columns.keys()].rename(columns=columns)
@@ -361,13 +369,13 @@ def display_data_grid(df: pd.DataFrame) -> None:
         hide_index=True,
         height=400,
         column_config={
-            "Fecha": st.column_config.DateColumn("Fecha", format="DD/MM/YYYY"),
-            "Importe": st.column_config.NumberColumn(
-                "Importe",
+            "Date": st.column_config.DateColumn("Date", format="DD/MM/YYYY"),
+            "Amount": st.column_config.NumberColumn(
+                "Amount",
                 format="%.2f €",
             ),
-            "Saldo": st.column_config.NumberColumn(
-                "Saldo",
+            "Balance": st.column_config.NumberColumn(
+                "Balance",
                 format="%.2f €",
             ),
         },
@@ -376,46 +384,44 @@ def display_data_grid(df: pd.DataFrame) -> None:
 
 def main() -> None:
     """Run the Streamlit app."""
-    st.set_page_config(page_title="Análisis Financiero", page_icon="💰", layout="wide")
-    st.title("Panel Financiero")
+    st.set_page_config(page_title="Financial Analysis", page_icon="💰", layout="wide")
+    st.title("Financial Dashboard")
 
     # Add file uploader in the sidebar
-    st.sidebar.header("Datos")
+    st.sidebar.header("Data")
     uploaded_file = st.sidebar.file_uploader(
-        "Cargar dataset (CSV)",
+        "Load dataset (CSV)",
         type="csv",
-        help="Sube un archivo CSV con las columnas: Fecha, Concepto, Category, Subcategory, Importe, Saldo",
+        help="Upload a CSV file with columns: Date, Concept, Category, Subcategory, Amount, Balance",
     )
 
     try:
         if uploaded_file is not None:
-            df = load_dataset(uploaded_file)
+            data = load_dataset(uploaded_file)
         else:
             # Use default dataset if no file is uploaded
             dataset_path = "./data/fake_dataset.csv"
-            df = load_dataset(dataset_path)
-    except Exception as e:
+            data = load_dataset(dataset_path)
+    except Exception as e:  # noqa: BLE001
         st.error(
-            "Error al cargar el dataset. Asegúrate de que el archivo tiene el formato correcto: "
-            "Fecha, Concepto, Category, Subcategory, Importe, Saldo"
+            f"Error loading dataset: {e!s}\n\n"
+            "Please ensure the file exists and contains the required columns: "
+            "Date, Description, Category, Subcategory, Amount, Balance",
         )
-        st.exception(e)
         return
 
-    min_date, max_date = get_date_range(df)
-    first_day, last_day = display_sidebar_filters(df, min_date, max_date)
+    min_date, max_date = get_date_range(data)
+    first_day, last_day = display_sidebar_filters(min_date, max_date)
 
-    filtered_df = filter_data(df, first_day, last_day)
-    st.caption(f"Mostrando datos del {format_date_range(first_day, last_day)}")
+    filtered_df = filter_data(data, first_day, last_day)
+    st.caption(f"Showing data from {format_date_range(first_day, last_day)}")
 
     # Display KPIs above the tabs
     display_kpis(filtered_df)
     total_expenses, total_income = calculate_kpis(filtered_df)
 
     # Create tabs for different visualizations
-    tab1, tab2, tab3, tab4 = st.tabs(
-        ["Desglose de Gastos e Ingresos", "Promedios Mensuales", "Análisis de Tendencia", "Datos"]
-    )
+    tab1, tab2, tab3, tab4 = st.tabs(["Income and Expense Breakdown", "Monthly Averages", "Trend Analysis", "Data"])
 
     with tab1:
         display_treemaps(filtered_df, total_expenses, total_income)
