@@ -2,6 +2,8 @@
 
 A comprehensive financial analysis dashboard built with Streamlit that helps you visualize and understand your personal finances.
 
+[https://personal-finance-mm.streamlit.app/](https://personal-finance-mm.streamlit.app/)
+
 ## Features
 
 - 📊 Interactive visualizations of income and expenses
