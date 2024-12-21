@@ -104,17 +104,13 @@ class DataLoader:
         return total_expenses, total_income
 
     def has_data(self) -> bool:
-        """Check if data is loaded in the DataLoader.
-
-        Returns:
-            bool: True if data is loaded, False otherwise
-        """
+        """Check if data is loaded in the DataLoader."""
         return self.data is not None
 
     @property
     def raw_data(self) -> pd.DataFrame:
         """Get the raw dataset."""
-        if not self.has_data():
+        if self.data is None:
             msg = "Data not loaded. Call load_dataset first."
             raise ValueError(msg)
         return self.data

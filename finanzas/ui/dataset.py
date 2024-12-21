@@ -8,7 +8,6 @@ import streamlit as st
 
 from finanzas.ui.ai_categorization import show_ai_categorization_tab
 from finanzas.ui.import_data import import_data_page
-from run_dashboard import PAGES
 
 if TYPE_CHECKING:
     from finanzas.data.loader import DataLoader
@@ -20,16 +19,13 @@ def dataset_page() -> None:
 
     data: DataLoader = st.session_state.data_loader
 
-    tab_dataset, tab_import, tab_ai = st.tabs(["Data", "Import Data", "Taxonomy", "AI Categorization"])
+    tab_dataset, tab_import, tab_ai = st.tabs(["Data", "Import Data", "AI Categorization"])
 
     with tab_dataset:
         show_dataset_tab(data)
 
     with tab_import:
         show_import_data_tab(data)
-
-    with tab_taxonomy:
-        show_taxonomy_tab(data)
 
     with tab_ai:
         show_ai_categorization_tab(data)

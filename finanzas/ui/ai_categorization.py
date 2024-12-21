@@ -71,7 +71,7 @@ def show_ai_categorization_tab(data: DataLoader) -> None:
 
         # Get uncategorized transactions (where Category is empty or null)
         uncategorized = grid_df[grid_df["Category"].isna() | (grid_df["Category"] == "")]
-        logger.info(f"Found {len(uncategorized)} uncategorized transactions")
+        logger.info("Found %d uncategorized transactions", len(uncategorized))
 
         for i in range(0, len(uncategorized), batch_size):
             if not st.session_state.processing:
@@ -80,11 +80,11 @@ def show_ai_categorization_tab(data: DataLoader) -> None:
                 break
 
             batch = uncategorized.iloc[i : i + batch_size]
-            logger.debug(f"Processing batch {i//batch_size + 1}, size: {len(batch)}")
+            logger.debug("Processing batch %d, size: %d", i // batch_size + 1, len(batch))
 
             try:
-                logger.debug(f"Existing categories: {data.categories}")
-                logger.debug(f"Use existing only: {use_existing_only}")
+                logger.debug("Existing categories: %s", data.categories)
+                logger.debug("Use existing only: %s", use_existing_only)
 
                 suggestions = get_openai_suggestions(
                     batch,
@@ -92,11 +92,11 @@ def show_ai_categorization_tab(data: DataLoader) -> None:
                     data.subcategories,
                     use_existing_only=use_existing_only,
                 )
-                logger.debug(f"Received suggestions: {suggestions}")
+                logger.debug("Received suggestions: %s", suggestions)
 
                 # Apply suggestions and track successful ones
                 for (idx, row), suggestion in zip(batch.iterrows(), suggestions):
-                    logger.debug(f"Applying suggestion for transaction {idx}: {suggestion}")
+                    logger.debug("Applying suggestion for transaction %s: %s", idx, suggestion)
                     data.raw_data.loc[idx, "Category"] = suggestion["Category"]
                     data.raw_data.loc[idx, "Subcategory"] = suggestion["Subcategory"]
 
@@ -105,7 +105,7 @@ def show_ai_categorization_tab(data: DataLoader) -> None:
                     successful_rows.append(row)
 
                     if apply_to_similar:
-                        logger.debug(f"Applying suggestion to similar transactions with concept: {row['Concept']}")
+                        logger.debug("Applying suggestion to similar transactions with concept: %s", row["Concept"])
                         data.data = apply_suggestions_to_similar(
                             data.raw_data,
                             row["Concept"],
@@ -122,7 +122,7 @@ def show_ai_categorization_tab(data: DataLoader) -> None:
                 )
 
             except (openai.OpenAIError, ValueError) as e:
-                logger.error(f"Error processing batch: {e!s}", exc_info=True)
+                logger.exception("Error processing batch")
                 st.error(f"Error processing batch: {e!s}")
                 st.session_state.processing = False
                 break

@@ -40,7 +40,8 @@ def get_openai_suggestions(
         context["constraints"] = {
             "categories": list(existing_categories),
             "category_subcategories": {cat: list(subcats) for cat, subcats in existing_subcategories.items()},
-            "important": "You must ONLY use categories and subcategories from the provided lists. Do not create new ones.",
+            "important": "You must ONLY use categories and subcategories from the provided lists. \
+                Don't create new ones.",
         }
 
     # Format transactions for the prompt
