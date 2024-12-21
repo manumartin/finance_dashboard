@@ -1,9 +1,20 @@
 """AI-powered categorization functionality."""
+
 from __future__ import annotations
 
+import json
+import logging
+from typing import TYPE_CHECKING
+
 import openai
-import pandas as pd
 import streamlit as st
+
+if TYPE_CHECKING:
+    import pandas as pd
+
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.StreamHandler())
+logger.propagate = False
 
 
 def get_openai_suggestions(
@@ -16,38 +27,67 @@ def get_openai_suggestions(
     """Get category and subcategory suggestions from OpenAI for selected rows."""
     api_key = st.secrets.get("OPENAI_API_KEY")
     if not api_key:
-        raise ValueError("OpenAI API key not found in secrets")
+        msg = "OpenAI API key not found in secrets"
+        raise ValueError(msg)
 
-    context = "You are a financial categorization assistant. "
+    # Build a more structured context
+    context: dict[str, str | dict] = {
+        "role": "You are a financial categorization assistant.",
+        "task": "Categorize financial transactions into appropriate categories and subcategories.",
+    }
+
     if use_existing_only:
-        context += f"\nExisting categories: {', '.join(existing_categories)}"
-        context += "\nExisting subcategories per category:"
-        for cat, subcats in existing_subcategories.items():
-            context += f"\n- {cat}: {', '.join(subcats)}"
-        context += "\nPlease only use these existing categories and subcategories."
+        context["constraints"] = {
+            "categories": list(existing_categories),
+            "category_subcategories": {cat: list(subcats) for cat, subcats in existing_subcategories.items()},
+            "important": "You must ONLY use categories and subcategories from the provided lists. Do not create new ones.",
+        }
 
-    entries = (
-        rows[["Concept", "Amount"]]
-        .apply(
-            lambda x: f"- Concept: {x['Concept']}, Amount: {x['Amount']:,.2f}€",
-            axis=1,
-        )
-        .tolist()
-    )
+    # Format transactions for the prompt
+    transactions = [{"concept": row["Concept"], "amount": f"{row['Amount']:,.2f}€"} for _, row in rows.iterrows()]
 
-    prompt = (
-        f"{context}\n\n"
-        "Please suggest appropriate categories and subcategories for these financial entries:\n"
-        f"{chr(10).join(entries)}\n\n"
-        "Respond in this format for each entry:\n"
-        "1. Category: [category], Subcategory: [subcategory]"
-    )
+    prompt = {
+        "context": context,
+        "transactions": transactions,
+    }
+
+    logger.debug("Starting OpenAI suggestions request")
+    logger.debug("Processing %d transactions", len(rows))
 
     try:
+        # Log the API request details
+        logger.debug("Request details:")
+        logger.debug(json.dumps(prompt, indent=2))
+
         client = openai.OpenAI(api_key=api_key)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}],
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a financial categorization assistant. "
+                        "You MUST return responses in valid JSON format only. "
+                        "Each response should be a json with a list of categorization items, like this:"
+                        "{\n"
+                        '  "categorizations": [\n'
+                        "    {\n"
+                        '      "category": "Food",\n'
+                        '      "subcategory": "Groceries"\n'
+                        "    },\n"
+                        "    {\n"
+                        '      "category": "Transport",\n'
+                        '    "subcategory": "Public Transport"\n'
+                        "  }\n"
+                        "]"
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": json.dumps(prompt, indent=2),
+                },
+            ],
+            response_format={"type": "json_object"},
             temperature=0.3,
         )
 
@@ -55,30 +95,31 @@ def get_openai_suggestions(
             st.error("Received empty response from OpenAI")
             return []
 
-        suggestions = []
-        lines = response.choices[0].message.content.strip().split("\n")
+        logger.debug("OpenAI API response:")
+        logger.debug(json.dumps(response.choices[0].message.content, indent=2))
 
-        for line in lines:
-            if not line.strip():
-                continue
+        # Parse JSON response
+        try:
+            result = json.loads(response.choices[0].message.content)
+            suggestions = [
+                {"Category": item["category"], "Subcategory": item["subcategory"]} for item in result["categorizations"]
+            ]
+        except (json.JSONDecodeError, KeyError):
+            logger.exception("Failed to parse OpenAI response")
+            return []
 
-            try:
-                cat_part = line.split("Category:")[1].split(",")[0].strip()
-                subcat_part = line.split("Subcategory:")[1].strip()
-                suggestions.append(
-                    {
-                        "Category": cat_part,
-                        "Subcategory": subcat_part,
-                    }
-                )
-            except IndexError:
-                continue
+        logger.debug("Processed suggestions:")
+        logger.debug(json.dumps(suggestions, indent=2))
 
+    except openai.OpenAIError:
+        logger.exception("OpenAI API error")
+        raise
+    except Exception:
+        logger.exception("Unexpected error in get_openai_suggestions")
+        raise
+    else:
+        logger.debug("OpenAI suggestions request completed successfully")
         return suggestions
-
-    except Exception as e:
-        st.error(f"Error getting suggestions from OpenAI: {str(e)}")
-        return []
 
 
 def apply_suggestions_to_similar(
@@ -91,4 +132,4 @@ def apply_suggestions_to_similar(
     mask = df["Concept"] == concept
     df.loc[mask, "Category"] = category
     df.loc[mask, "Subcategory"] = subcategory
-    return df 
+    return df

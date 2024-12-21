@@ -1,20 +1,30 @@
 """UI components for trend analysis and projections."""
+
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from typing import TYPE_CHECKING
 
 import numpy as np
 import pandas as pd
 import plotly.express as px  # type: ignore[import-untyped]
 import streamlit as st
 
+if TYPE_CHECKING:
+    from finanzas.data.loader import DataLoader
 
-def display_trend_analysis(filtered_df: pd.DataFrame) -> None:
+
+def display_trend_analysis(loader: DataLoader) -> None:
     """Display trend analysis and projection with an improved UI layout."""
     st.subheader("Balance Trend Analysis and Projection")
 
     # Prepare daily balance data
-    trend_df = filtered_df.sort_values("Date").groupby("Date")["Balance"].last().reset_index()
+    trend_df = (
+        loader.filtered_data.sort_values("Date")
+        .groupby("Date")["Balance"]
+        .last()
+        .reset_index()
+    )
     current_balance = trend_df["Balance"].iloc[-1]
     last_date = trend_df["Date"].max()
 
@@ -145,4 +155,4 @@ def display_trend_analysis(filtered_df: pd.DataFrame) -> None:
             },
         )
 
-        st.plotly_chart(fig, use_container_width=True) 
+        st.plotly_chart(fig, use_container_width=True)

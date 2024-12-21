@@ -1,11 +1,16 @@
 """UI components for treemap visualizations."""
+
 from __future__ import annotations
 
-import pandas as pd
+from typing import TYPE_CHECKING
+
 import plotly.express as px  # type: ignore[import-untyped]
 import streamlit as st
 
-from finanzas.utils.calculations import calculate_kpis, calculate_monthly_averages
+if TYPE_CHECKING:
+    import pandas as pd
+
+    from finanzas.data.loader import DataLoader
 
 
 def create_treemap(df: pd.DataFrame, total: float, title: str) -> px.treemap:
@@ -30,27 +35,27 @@ def create_treemap(df: pd.DataFrame, total: float, title: str) -> px.treemap:
     return fig
 
 
-def display_treemaps(filtered_df: pd.DataFrame) -> None:
+def display_treemaps(loader: DataLoader) -> None:
     """Display treemaps for income and expenses."""
-    total_expenses, total_income = calculate_kpis(filtered_df)
+    total_expenses, total_income = loader.calculate_kpis()
 
     st.subheader("Income Breakdown")
-    earnings_df = filtered_df[filtered_df["Amount"] > 0].copy()
+    earnings_df = loader.filtered_data[loader.filtered_data["Amount"] > 0].copy()
     earnings_treemap_fig = create_treemap(earnings_df, total_income, "Income Breakdown")
     st.plotly_chart(earnings_treemap_fig, use_container_width=True)
 
     st.subheader("Expense Breakdown")
-    expenses_df = filtered_df[filtered_df["Amount"] < 0].copy()
+    expenses_df = loader.filtered_data[loader.filtered_data["Amount"] < 0].copy()
     expenses_df["Amount"] = expenses_df["Amount"].abs()
     expenses_treemap_fig = create_treemap(expenses_df, abs(total_expenses), "Expense Breakdown")
     st.plotly_chart(expenses_treemap_fig, use_container_width=True)
 
 
-def display_monthly_averages(filtered_df: pd.DataFrame) -> None:
+def display_monthly_averages(loader: DataLoader) -> None:
     """Display treemap for average monthly spending."""
     st.subheader("Monthly Average Expenses")
 
-    monthly_avg_df = calculate_monthly_averages(filtered_df)
+    monthly_avg_df = loader.calculate_monthly_averages()
     total_monthly_avg = monthly_avg_df["Amount"].sum()
 
     # Create simplified entry labels for averages
@@ -74,4 +79,4 @@ def display_monthly_averages(filtered_df: pd.DataFrame) -> None:
     )
     fig.update_layout(height=600)
 
-    st.plotly_chart(fig, use_container_width=True) 
+    st.plotly_chart(fig, use_container_width=True)

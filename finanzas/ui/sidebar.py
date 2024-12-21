@@ -1,18 +1,12 @@
-"""UI components for filtering data."""
+"""UI components for the sidebar, including data loading and filtering."""
+
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
 from calendar import monthrange
+from datetime import date, datetime, timezone
 
 import pandas as pd
 import streamlit as st
-
-
-def get_date_range(df: pd.DataFrame) -> tuple[date, date]:
-    """Extract the minimum and maximum dates from the dataset."""
-    min_date = df["Date"].min().date()
-    max_date = df["Date"].max().date()
-    return min_date, max_date
 
 
 def display_sidebar_filters(
@@ -56,4 +50,4 @@ def display_sidebar_filters(
     # Add a checkbox to show/hide hidden entries
     show_hidden = st.sidebar.checkbox("Show Hidden Entries", value=False)
 
-    return first_day, last_day, show_hidden 
+    return first_day, last_day, show_hidden
